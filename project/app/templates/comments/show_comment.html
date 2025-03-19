@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <section class="reviews mb-5">
+        {% if comment %}
+            <h1>Рассмотрение рецензии</h1>
+            <h2>{{ comment.book.name }}</h2>
+            <p>{{ comment.text }}</p>
+            <form method="POST">
+                <button type="submit" name="approve">Одобрить</button>
+                <button type="submit" name="reject">Отклонить</button>
+            </form>
+        {%endif%}
+    </section>
+</div>
+{% endblock %}
+
